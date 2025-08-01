@@ -31,3 +31,9 @@ This repository contains a simple Flask API that connects to a public BigQuery d
 
 - `GET /` - Hello World endpoint
 - `GET /api/presidents` - Returns all US presidents from BigQuery
+
+## Troubleshooting
+
+- **"No module named 'google'"**: Make sure you've activated your virtual environment
+- **BigQuery permission errors**: Ensure `interview-credentials.json` is in the project root
+- **Port 5000 in use**: The app will automatically find another port, or specify one with `app.run(port=5001)`
