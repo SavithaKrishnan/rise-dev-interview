@@ -2,7 +2,9 @@ import './App.css';
 import Header from './components/Header.tsx'
 import Table from './components/Table.tsx'
 import SearchByDate from './components/SearchByYear.tsx'
-import { Tabs, TabList, Tab, TabPanels, TabPanel, TabIndicator, Flex } from '@chakra-ui/react';
+import PresidentsBarChart from './components/BarChart.tsx'
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel, Flex } from '@chakra-ui/react';
 
 
  
@@ -12,11 +14,12 @@ function App() {
     <div >
       <Header />
 
-      <Flex marginLeft={100} marginRight={100} marginTop={10}>
-        <Tabs variant='enclosed' >
+      <Flex marginLeft={10} marginRight={50} marginTop={2} minWidth={1400}>
+        <Tabs variant='enclosed' minWidth={1400}>
           <TabList>
             <Tab fontWeight={"bold"} fontSize={20}>All Presidents</Tab>
             <Tab fontWeight={"bold"} fontSize={20}>Search By Date</Tab>
+            <Tab fontWeight={"bold"} fontSize={20}>Age at Inauguration Chart</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -24,6 +27,9 @@ function App() {
             </TabPanel>
             <TabPanel>
               <SearchByDate />
+            </TabPanel>
+            <TabPanel>
+              <PresidentsBarChart/>
             </TabPanel>
           </TabPanels>
         </Tabs>

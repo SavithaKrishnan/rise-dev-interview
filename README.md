@@ -37,3 +37,11 @@ This repository contains a simple Flask API that connects to a public BigQuery d
 - **"No module named 'google'"**: Make sure you've activated your virtual environment
 - **BigQuery permission errors**: Ensure `interview-credentials.json` is in the project root
 - **Port 5000 in use**: The app will automatically find another port, or specify one with `app.run(port=5001)`
+
+## Future Improvements
+- Make the table in the 'All Presidents' tab sortable for all fields except Date fields and maybe VP field.
+- Add validation for search date entry in 'Search By Date' tab.
+
+
+##Rough Instruction to get this up and running
+

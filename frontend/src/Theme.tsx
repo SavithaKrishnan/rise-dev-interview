@@ -266,6 +266,7 @@ import {
                 }
               },
               td: {
+                fontSize: '8px',
                 paddingInlineStart: '8px',
                 paddingInlineEnd: '8px',
                 borderCollapse: 'separate',
