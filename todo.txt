@@ -1,0 +1,2 @@
+- add intro/description beneath header
+- add another endpoint-- map of birthplaces ? a visualization of pres ages when they took office ?
