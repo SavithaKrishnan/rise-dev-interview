@@ -109,7 +109,7 @@ I had never built a visualization in a React framework, so I used AI to figure o
 
 ### Time Usage
 
-In the 4 hour time limit, I completed app setup, API ednpoint setup and UI setup for the table ('All Presidents' tab) and the search-by-date feature. With some additional time, I completed the visualization in the third tab ('Age at Inauguration Chart'), aesthetic changes, and an API endpoint testing file. With even more time, I would address some of the points below!
+In the 4 hour time limit, I completed app setup, API endpoint setup and UI setup for the table ('All Presidents' tab) and the search-by-date feature. With some additional time, I completed the visualization in the third tab ('Age at Inauguration Chart'), aesthetic changes, and an API endpoint testing file (though I would revisit the testing file with additional time). With even more time, I would address some of the points below!
 
 ### Additional Features & Future Roadmap
 
