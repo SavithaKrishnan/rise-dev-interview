@@ -105,18 +105,18 @@ rise-dev-interview/
 
 ### AI Usage
 
-I had never built a visualization in a React framework, so I used AI to figure out the general format for a bar chart.
+I had never built a visualization in a React framework, so I used AI to figure out the general format for a bar chart. I had also never worked with MagicMock when testing API endpoints, so I looked up examples on ChatGPT.
 
 ### Time Usage
 
-In the 4 hour time limit, I completed app setup, API ednpoint setup and UI setup for the table and the search-by-date feature. With some additional time, I completed the visualization in the third tab, aesthetic changes, and an API endpoint test file. With even more time, I would address some of the points below!
+In the 4 hour time limit, I completed app setup, API ednpoint setup and UI setup for the table ('All Presidents' tab) and the search-by-date feature. With some additional time, I completed the visualization in the third tab ('Age at Inauguration Chart'), aesthetic changes, and an API endpoint testing file. With even more time, I would address some of the points below!
 
 ### Additional Features & Future Roadmap
 
 - More dynamic table with pagination and search panel (sorting, pagination, filtering)
 - Joining in other data sources (voting records, etc.) to create more content and allow for more of a narrative to the app
 - More thorough error handling, data validation for API endpoint arguments, and automated testing
-- Method of authentication (Auth0?)
+- Method of authentication (Auth0?) for security 
 - More dynamic visulizations + small aesthetic fixes in last tab
 - Deploy app to a public production environment (e.g. Vercel, Google Cloud Run).
 
@@ -160,10 +160,4 @@ In the 4 hour time limit, I completed app setup, API ednpoint setup and UI setup
 - **BigQuery permission errors**: Ensure `interview-credentials.json` is in the project root
 - **Port 5000 in use**: The app will automatically find another port, or specify one with `app.run(port=5001)`
 
-## Future Improvements
-- Make the table in the 'All Presidents' tab sortable for all fields except Date fields and maybe VP field.
-- Add validation for search date entry in 'Search By Date' tab.
-
-
-##Rough Instruction to get this up and running
 
