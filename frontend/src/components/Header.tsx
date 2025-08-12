@@ -1,6 +1,5 @@
 import { Center, Box  } from "@chakra-ui/react";
 
-
 function Header () {
     return (
     <Box marginTop={2}>   

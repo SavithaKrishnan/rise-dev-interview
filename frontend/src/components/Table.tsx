@@ -13,9 +13,10 @@ import {
 } from "@chakra-ui/react";
 
 function PresidentsTable() {
-  const [presidents, setPresidents] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [presidents, setPresidents] = useState([]); // result of API call to presidents endpoint
+  const [loading, setLoading] = useState(true); // boolean for if result is loading
 
+  // Make API call
   useEffect(() => {
     fetch("http://127.0.0.1:5000/api/presidents")
       .then((response) => response.json())
@@ -29,6 +30,7 @@ function PresidentsTable() {
       });
   }, []);
 
+  // Run spinner if result has not yet loaded
   if (loading) {
     return (
       <Center mt={10}>
@@ -37,6 +39,7 @@ function PresidentsTable() {
     );
   }
 
+  // Display message if there is no data from API call
   if (presidents.length === 0) {
     return (
       <Center mt={10}>
@@ -84,56 +87,3 @@ function PresidentsTable() {
 }
 
 export default PresidentsTable;
-
-/*
-function Table() {
-  const [presidents, setPresidents] = useState([]);
-
-  useEffect(() => {
-    fetch('http://127.0.0.1:5000/api/presidents')
-      .then(response => response.json())
-      .then(data => setPresidents(data))
-      .catch(error => console.error(error));
-  }, []);
-
-  
-  return (
-    <div style={{ padding: '10px'}}>
-      <table border="1" cellPadding="10">
-        <thead>
-          <tr>
-            <th>President</th>
-            <th>Number</th>
-            <th>Born</th>
-            <th>Died</th>
-            <th>Birthplace</th>
-            <th>Party</th>
-            <th>Term Start</th>
-            <th>Term End</th>
-            <th>Tenure</th>
-            <th>Vice President(s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {presidents.map((item, index) => (
-            <tr key={index}>
-              <td>{item.President}</td>
-              <td>{item.Number}</td>
-              <td>{item.Born}</td>
-              <td>{item.Died}</td>
-              <td>{item.Birthplace}</td>
-              <td>{item.Party}</td>
-              <td>{item['Term Start']}</td>
-              <td>{item['Term End']}</td>
-              <td>{item['Tenure Length']}</td>
-              <td>{item['Vice President']}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-export default Table;
-*/

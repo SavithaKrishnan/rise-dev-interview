@@ -2,18 +2,18 @@ import {Button, FormControl, FormLabel, FormHelperText, Input, Flex, Box} from '
 import { useState } from "react";
 
 function SearchByDate () {
-    const [searchDate, setSearchDate] = useState();
-    const [data, setData] = useState("");
+    const [searchDate, setSearchDate] = useState(); // input value
+    const [data, setData] = useState(""); // result from API call
     const [loading, setLoading] = useState(false);
 
-    //need better error handling here for if the search_date field is blank
+    // Would add with additional time: need better error handling here for if the search_date field is blank
     const searchPresidentByDate = async () => {
         if (!searchDate.trim()){
             setLoading(true);
             setData("");
         }
 
-        // get president from search_by_date endpoint
+        // Make api call to search_by_date endpoint
         try {
             const result = await fetch(`http://127.0.0.1:5000/api/search_by_date?search_date=${encodeURIComponent(searchDate)}`)
             if (!result.ok) {

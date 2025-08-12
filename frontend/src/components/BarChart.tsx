@@ -24,6 +24,7 @@ const partyColors = {
 export default function PresidentsBarChart() {
   const [ageData, setAgeData] = useState([]);
 
+  // Make api call
   useEffect(() => {
     fetch('http://127.0.0.1:5000/api/visualizations')
       .then(response => response.json())
