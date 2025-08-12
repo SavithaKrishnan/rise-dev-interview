@@ -48,6 +48,7 @@ function PresidentsTable() {
     );
   }
 
+  // with additional time: make table sortable, filterable
   return (
     <TableContainer p={5}>
       <Table variant="striped" colorScheme="blue" size="sm" >
