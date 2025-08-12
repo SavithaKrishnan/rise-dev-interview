@@ -74,6 +74,14 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
    
    Visit the app at http://localhost:3000/.
 
+### Testing
+
+1. New Terminal. Navigate to the backend folder and run test file:
+   ```bash
+   cd backend
+   pytest test_app.py
+   ```
+
 ---
 
 ## Project Structure
