@@ -18,10 +18,11 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
 ---
 
 ##  Architecture
-
+```
 ┌─────────────┐ ┌─────────────────┐ ┌───────────┐
 │ React UI │ <–––> │ Flask API │ <–––> BigQuery |
 └─────────────┘ └─────────────────┘ └───────────┘
+```
 
 ---
 
