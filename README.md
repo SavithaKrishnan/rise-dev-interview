@@ -61,9 +61,9 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
 
 ### Frontend
 
-1. Navigate to the frontend folder:
+1. New Terminal. Navigate to the frontend folder:
    ```bash
-   cd ../frontend
+   cd frontend
    ```
 
 2. Install dependencies and start the dev server:
