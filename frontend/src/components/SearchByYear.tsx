@@ -1,30 +1,40 @@
-import {Button, FormControl, FormLabel, FormHelperText, Input, Flex, Box} from '@chakra-ui/react'
+import {Button, Text, FormControl, FormLabel, FormHelperText, Input, Flex, Box, Spinner} from '@chakra-ui/react'
 import { useState } from "react";
 
 function SearchByDate () {
-    const [searchDate, setSearchDate] = useState(); // input value
-    const [data, setData] = useState(""); // result from API call
+    const [searchDate, setSearchDate] = useState(""); // input value
+    const [data, setData] = useState(null); // result from API call
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null); // error message
 
     // Would add with additional time: need better error handling here for if the search_date field is blank
     const searchPresidentByDate = async () => {
+        //make sure there is a search date before making api call
         if (!searchDate.trim()){
-            setLoading(true);
-            setData("");
+            setError("Please enter a date before searching.")
+            setData(null);
+            return;
         }
+
+        // clear data + errors before making new api call
+        setLoading(true);
+        setError(null);
+        setData(null);
 
         // Make api call to search_by_date endpoint
         try {
             const result = await fetch(`http://127.0.0.1:5000/api/search_by_date?search_date=${encodeURIComponent(searchDate)}`)
             if (!result.ok) {
-                throw new Error(`No president found. Try inputting a different date.`);
+                throw new Error(
+                    "No president found. Try inputting a different date."
+                );
             }
-            const data = await result.json();
-            setData(data); 
+            const jsonData = await result.json();
+            setData(jsonData); 
             } catch (error) {
-            setData(`Error: ${error.message}`);
+                setError(`Error: ${error.message}`);
             } finally {
-            setLoading(false);
+                setLoading(false);
             }
         }
 
@@ -42,8 +52,15 @@ function SearchByDate () {
                 disabled={loading}
                 bg={"blue.500"}
                 color={"white"}> 
-                Search
+                {loading ? <Spinner size="sm" /> : "Search"}
             </Button>
+
+            {error && (
+                <Text color="red.500" marginTop={3}>
+                {error}
+                </Text>
+            )}
+
             {
                 data && (
                     <Box minWidth={500} maxWidth={500} marginTop={5} background={"#f4f4f4"} padding={2}>
