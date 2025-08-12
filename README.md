@@ -74,6 +74,7 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
 ---
 
 ## Project Structure
+```
 rise-dev-interview/
 ├── backend/
 │   ├── app.py                                     # Flask API + BigQuery integration to access Presidents data
@@ -92,6 +93,7 @@ rise-dev-interview/
                ├── Header.tsx
                ├── SearchByYear.tsx
                └── Table.tsx
+```
 
 ---
 
