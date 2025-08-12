@@ -53,6 +53,7 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
 
 4. Run the Flask server:
    ```bash
+   cd backend
    python app.py
    ```
    
@@ -114,8 +115,8 @@ In the 4 hour time limit, I completed app setup, API ednpoint setup and UI setup
 
 - More dynamic table with pagination and search panel (sorting, pagination, filtering)
 - Joining in other data sources (voting records, etc.) to create more content and allow for more of a narrative to the app
+- More thorough error handling, data validation for API endpoint arguments, and automated testing
 - Method of authentication (Auth0?)
-- More automated testing (especially for frontend)
 - Small aesthetic fixes especially for the visualization in last tab
 - Deploy app to a public production environment (e.g. Vercel, Google Cloud Run).
 
