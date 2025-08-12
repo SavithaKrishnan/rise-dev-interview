@@ -69,6 +69,7 @@ def get_president_by_date():
 
     return jsonify(presidents[0])
 
+#todo: add params so you could see multiple types of visualization e.g. 'Retirement Length Over Time'
 @app.route('/api/visualizations')
 def get_president_ages():
     client = bigquery.Client(project=PROJECT_ID)
