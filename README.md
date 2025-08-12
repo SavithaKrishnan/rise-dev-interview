@@ -105,7 +105,7 @@ rise-dev-interview/
 
 ### AI Usage
 
-I had never built a visualization in a React framework, so I used AI to figure out the general format for a bar chart. I had also never worked with MagicMock when testing API endpoints, so I looked up examples on ChatGPT.
+I used ChatGPT to help with the visualization on the third tab, to help me understand MagicMock when testing endpoints, and whenever I ran into a bug I couldn't solve quickly with a look at StackOverflow.
 
 ### Time Usage
 
