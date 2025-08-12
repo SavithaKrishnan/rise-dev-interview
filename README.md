@@ -9,11 +9,12 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
 - **Backend (Flask + BigQuery)**  
   - `GET /api/presidents`: Retrieves a list of all U.S. presidents.  
   - `GET /api/search_by_date?search_date=YYYY-MM-DD`: Returns the president serving on a specific date.
+  - `GET /api/visualizations`: Returns presidents and their age at inauguration
 
 - **Frontend (React + Chakra UI)**  
-  - Displays an interactive table of presidents.  
+  - Displays a table of presidents, their birth/death info and data about their term.  
   - Includes a date-picker search to find the president in office on the chosen date.  
-  - Visualizes data with charts colored by political party.
+  - Visualizes president's age at inauguration over time through a bar chart.
 
 ---
 
@@ -62,7 +63,6 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
    ```bash
    cd ../frontend
    ```
-   
 
 2. Install dependencies and start the dev server:
    ```bash
