@@ -74,26 +74,24 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
 ---
 
 ## Project Structure
-
 rise-dev-interview/
 ├── backend/
-│   ├── app.py                                        # Flask API + BigQuery integration to access Presidents data
-│   ├── test_app.py                                   # Tests for the API endpoints
+│   ├── app.py                                     # Flask API + BigQuery integration to access Presidents data
+│   ├── test_app.py                                # Tests for the API endpoints
 │   ├── requirements.txt
 │   ├── .env.example
 │   └── interview-credentials.json (gitignored)
 └── frontend/
     ├── package.json
-    ├── src/
-    │   ├── index.tsx
-    │   ├── App.tsx                                   # main UI page; structure = header + tabs
-    │   ├── Theme.tsx
-    │   └── components/                               # contains components for header + each tab in index.tsx
-    │       ├── BarChart.tsx
-    │       ├── Header.tsx
-    │       ├── SearchByYear.tsx
-    │       └── Table.tsx
-    └── public/
+    ├── public/
+    └── src/
+         ├──index.tsx
+         ├── App.tsx                               # main UI page
+         └── components                            # contains components for header + each tab in index.tsx
+               ├── BarChart.tsx
+               ├── Header.tsx
+               ├── SearchByYear.tsx
+               └── Table.tsx
 
 ---
 
