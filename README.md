@@ -117,7 +117,7 @@ In the 4 hour time limit, I completed app setup, API ednpoint setup and UI setup
 - Joining in other data sources (voting records, etc.) to create more content and allow for more of a narrative to the app
 - More thorough error handling, data validation for API endpoint arguments, and automated testing
 - Method of authentication (Auth0?)
-- Small aesthetic fixes especially for the visualization in last tab
+- More dynamic visulizations + small aesthetic fixes in last tab
 - Deploy app to a public production environment (e.g. Vercel, Google Cloud Run).
 
 
