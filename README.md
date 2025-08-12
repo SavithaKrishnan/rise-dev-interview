@@ -19,6 +19,7 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
 ---
 
 ##  Architecture
+
 ```
 ┌─────────────┐ ┌─────────────────┐ ┌───────────┐
 │ React UI │ <–––> │ Flask API │ <–––> BigQuery |
@@ -75,6 +76,7 @@ A full-stack demo project featuring a *Flask API* connected to BigQuery and a *R
 ---
 
 ## Project Structure
+
 ```
 rise-dev-interview/
 ├── backend/
@@ -98,16 +100,28 @@ rise-dev-interview/
 
 ---
 
-## Work in Progress & Roadmap
+## Additional Notes
 
-- Add sorting and pagination to the data table.
-- Improve date validation and error feedback on the search form.
-- Extend API to support more query options (e.g., by president number or party).
-- Deploy app to a public environment (e.g. Vercel, Google Cloud Run).
+### AI Usage
+
+I had never built a visualization in a React framework, so I used AI to figure out the general format for a bar chart.
+
+### Time Usage
+
+In the 4 hour time limit, I completed app setup, API ednpoint setup and UI setup for the table and the search-by-date feature. With some additional time, I completed the visualization in the third tab, aesthetic changes, and an API endpoint test file. With even more time, I would address some of the points below!
+
+### Additional Features & Future Roadmap
+
+- More dynamic table with pagination and search panel (sorting, pagination, filtering)
+- Joining in other data sources (voting records, etc.) to create more content and allow for more of a narrative to the app
+- Method of authentication (Auth0?)
+- More automated testing (especially for frontend)
+- Small aesthetic fixes especially for the visualization in last tab
+- Deploy app to a public production environment (e.g. Vercel, Google Cloud Run).
+
+
 
 # [Original Instructions Below] Full Stack Interview Template
-
-This repository contains a simple Flask API that connects to a public BigQuery dataset containing US Presidents
 
 ## Setup
 

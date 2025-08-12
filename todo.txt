@@ -1,9 +1,3 @@
-- add intro/description beneath header
-- do a test run in build mode
-- add error handling for date entry whne it's empty
-- add pytest file to check api endpoints
-- add info about VPs in the search tab
-- add another endpoint-- map of birthplaces ? a visualization of pres ages when they took office ?
 - edit ReadMe
     - add instructions to start up app
     - add screenrecording of app working
@@ -15,20 +9,35 @@
             - build out visualizations tab (had some fun with this, haven't had as much experience building out graphs/visualizations wiht React, so was just practicing)
             - parameterize visualizations endpoint to take in different 
     - notes about use of AI
+
+DONE
+- add intro/description beneath header
+- ways to protect agaisnt sql injection
 - add notes of what i would change in productionalization/further development:
     - method of authentication (Auth0?)
-    - change table to be React Table 
     - make table sortable by different columns
     - standardize date formats
     - in the visualization make some notes about Grover Cleveland and Donald Trump since he served 2 non-consecutive terms
     - maybe combine all threee visualizaitons into one-- something like example ?
-    - take steps to protect against sql injection
     - add in pytest file 
     - greater error handling and data validation 
     - add search panel for the 'All Presidents' tab-- allowing users to filter and sort data as they would like
     - additional data sources to create a clear narrative for this app
     - small aesthetic fixes-- make sure George Washington's full name appears in chart, fix tooltip when hovering on bars to remove underscores from Age_At_Inauguration, remove grid lines
 
+
+
+TODO
+- do a test run in build mode
+- remove consolelogs and prints
+- add error handling for date entry whne it's empty
+- add pytest file to check api endpoints
+
+
+THINGS WE WON'T DO NOW BUT GOOD TO HOLD ON TO
+- Improve date validation and error feedback on the search form.
+- Extend API to support more query options (e.g., by president number or party).
+- add another endpoint-- map of birthplaces ? a visualization of pres ages when they took office ?
 - visualizations:
     - age at death over time
     - age at inauguration over time

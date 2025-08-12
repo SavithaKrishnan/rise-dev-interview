@@ -31,7 +31,6 @@ export default function PresidentsBarChart() {
       .catch(error => console.error(error));
   }, []);
 
-  console.log(ageData)
   // Create legend payload manually
   const legendPayload = Object.keys(partyColors).map((Party) => ({
     value: Party,

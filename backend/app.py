@@ -9,17 +9,18 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+# BigQuery config
+PROJECT_ID = "rise-dev-interview"
+DATASET_ID = "presidents"
+TABLE_ID = "us_presidents"
+
 @app.route('/api/presidents')
 def get_presidents():
-    project_id = 'rise-dev-interview'
-    dataset_id = 'presidents'
-    table_id = 'us_presidents'
-
-    client = bigquery.Client(project=project_id)
+    client = bigquery.Client(project=PROJECT_ID)
 
     query = f"""
     SELECT * 
-    FROM `{project_id}.{dataset_id}.{table_id}`
+    FROM `{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
     ORDER BY Number ASC
     """
 
@@ -35,24 +36,28 @@ def get_presidents():
 @app.route('/api/search_by_date')
 def get_president_by_date():
     search_date = request.args.get("search_date")
-    project_id = 'rise-dev-interview'
-    dataset_id = 'presidents'
-    table_id = 'us_presidents'
 
-    client = bigquery.Client(project=project_id)
+    client = bigquery.Client(project=PROJECT_ID)
 
     query = f"""
     SELECT President, Party, `Term Start`, `Term End`, `Tenure Length` 
-    FROM `{project_id}.{dataset_id}.{table_id}`
-    WHERE DATE('{search_date}') >= PARSE_DATE('%B %d, %Y', `Term Start`) 
-        AND DATE('{search_date}') < 
+    FROM `{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+    WHERE DATE(@search_date) >= PARSE_DATE('%B %d, %Y', `Term Start`) 
+        AND DATE(@search_date) < 
             CASE 
                 WHEN `Term End` = 'Present' THEN CURRENT_DATE() 
                 ELSE PARSE_DATE('%B %d, %Y', `Term End`) 
             END
     """
 
-    query_job = client.query(query)
+    #to protect against sql injection
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=[
+            bigquery.ScalarQueryParameter("search_date", "DATE", search_date)
+        ]
+    )
+
+    query_job = client.query(query, job_config=job_config)
     results = list(query_job.result())
 
     if not results:
@@ -66,18 +71,14 @@ def get_president_by_date():
 
 @app.route('/api/visualizations')
 def get_president_ages():
-    project_id = 'rise-dev-interview'
-    dataset_id = 'presidents'
-    table_id = 'us_presidents'
-
-    client = bigquery.Client(project=project_id)
+    client = bigquery.Client(project=PROJECT_ID)
 
     query = f"""
     SELECT President
         , CONCAT(President, ' (', EXTRACT(YEAR FROM PARSE_DATE('%B %d, %Y', `Term Start`)), ')') AS Name_Year
         , Party
         , DATE_DIFF(PARSE_DATE('%B %d, %Y', `Term Start`), PARSE_DATE('%b %d, %Y', Born), YEAR) AS Age_At_Inauguration
-    FROM `{project_id}.{dataset_id}.{table_id}`
+    FROM `{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
     ORDER BY Number
     """
 
