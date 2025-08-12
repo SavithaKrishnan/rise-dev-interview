@@ -6,12 +6,14 @@ function SearchByDate () {
     const [data, setData] = useState("");
     const [loading, setLoading] = useState(false);
 
+    //need better error handling here for if the search_date field is blank
     const searchPresidentByDate = async () => {
         if (!searchDate.trim()){
             setLoading(true);
             setData("");
         }
 
+        // get president from search_by_date endpoint
         try {
             const result = await fetch(`http://127.0.0.1:5000/api/search_by_date?search_date=${encodeURIComponent(searchDate)}`)
             if (!result.ok) {
