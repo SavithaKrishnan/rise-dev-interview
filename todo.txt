@@ -1,5 +1,7 @@
 - add intro/description beneath header
 - do a test run in build mode
+- add error handling for date entry whne it's empty
+- add pytest file to check api endpoints
 - add info about VPs in the search tab
 - add another endpoint-- map of birthplaces ? a visualization of pres ages when they took office ?
 - edit ReadMe
